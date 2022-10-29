@@ -32,6 +32,16 @@ const initModels = () => {
     Ingredients.hasMany(UsersIngredients)
     UsersIngredients.belongsTo(Ingredients)
 
+    //* Categories  Recipes
+
+    //* Ingredients Types
+     
+    //* Recipes RecipesIngredients
+
+    //* Ingredients RecipesIngredients
+
+    //* Recipes Instructions
+
 }
 
 
