@@ -9,8 +9,8 @@ const UsersIngredients = require('./users_ingredients.models')
 const UsersRecipes = require('./users_recipes.models')
 
 const initModels = () => {
-    //? hasMany llave foranea dentro de parentesis
-    //? belongsTo llave foranea en primer paramentro
+    //? hasMany || hasOne llave foranea dentro de parentesis
+    //? belongsTo || belongsToMany llave foranea en primer paramentro
 
     //* Users 1:M Recipes
     Users.hasMany(Recipes)
@@ -32,16 +32,26 @@ const initModels = () => {
     Ingredients.hasMany(UsersIngredients)
     UsersIngredients.belongsTo(Ingredients)
 
-    //* Categories  Recipes
+    //TODO
+    //* Recipes M:1 Categories
+    Categories.hasMany(Recipes)
+    Recipes.belongsTo(Categories)
 
-    //* Ingredients Types
-     
-    //* Recipes RecipesIngredients
+    //* Ingredients M:1 Types
+    Types.hasMany(Ingredients)
+    Ingredients.belongsTo(Types)
 
-    //* Ingredients RecipesIngredients
+    //* Recipes 1:M RecipesIngredients
+    Recipes.hasMany(RecipesIngredients)
+    RecipesIngredients.belongsTo(Recipes)
 
-    //* Recipes Instructions
+    //* Ingredients 1:M RecipesIngredients
+    Ingredients.hasMany(RecipesIngredients)
+    RecipesIngredients.belongsTo(Ingredients)
 
+    //* Recipes 1:M Instructions
+    Recipes.hasMany(Instructions)
+    Instructions.belongsTo(Recipes)
 }
 
 
