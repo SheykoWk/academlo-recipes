@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
-
-const categoryServices = require("./categories.services");
+const typeServices = require("./types.services");
 const adminMiddleware = require("../middlewares/role.middleware");
 
 require("../middlewares/auth.middleware")(passport);
@@ -9,19 +8,19 @@ require("../middlewares/auth.middleware")(passport);
 //? /:id
 
 router.route("/")
-  .get(categoryServices.getAllCategories)
+  .get(typeServices.getAllTypes)
   .post(
     passport.authenticate("jwt", { session: false }),
     adminMiddleware,
-    categoryServices.postCategory
-  );
+    typeServices.postType
+  ); 
 
 router.route("/:id")
-  .get(categoryServices.getCategoryById)
+  .get(typeServices.getTypeById)
   .delete(
     passport.authenticate("jwt", { session: false }),
     adminMiddleware,
-    categoryServices.deleteCategory
+    typeServices.deleteType
   ); 
 
 module.exports = router;
