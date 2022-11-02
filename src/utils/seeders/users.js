@@ -3,7 +3,7 @@ const {faker} = require('@faker-js/faker')
 
 const Users = require('../../models/users.models')
 
-for(let i = 0; i < 10; i++){
+/* for(let i = 0; i < 10; i++){
     Users.create(
         {
             id: uuid.v4(),
@@ -15,13 +15,15 @@ for(let i = 0; i < 10; i++){
             birthday: faker.date.birthdate()
         }
     )
-}
+} */
+
 Users.create({
     id:'39bbcef5-bff2-4ea2-b0af-6a3b2c08fec9',
     firstName: 'Admin',
     lastName: 'Root',
     email: 'admin@admin.com',
     password: 'root',
-    phone: faker.phone.number(),
-    birthday: faker.date.birthdate()
+    role: 'admin',
+    phone: '12341234',
+    birthday: '2000/10/22'
 })

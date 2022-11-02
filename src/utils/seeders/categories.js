@@ -1,4 +1,3 @@
-
 const Categories = require('../../models/categories.models')
 
 Categories.bulkCreate([
@@ -15,3 +14,5 @@ Categories.bulkCreate([
     {id: 11,name: 'Platos fuertes'},
     {id: 12,name: 'Bebidas'}
 ])
+
+//? insert into categories (id, name) values (1, "Postres") , (2, "A la parrilla")............;

@@ -24,3 +24,11 @@ Orden
 6. controladores
 7. servicios
 8. rutas
+
+
+
+Copiar 
+-   /utils/seeders
+-   /types
+-   /instructions/
+-   /ingredients
