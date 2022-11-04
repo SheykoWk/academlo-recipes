@@ -117,6 +117,7 @@ const getMyRecipes = async(userId) => {
         }
     })
     const filteredIngredients = userIngredients.map(obj => obj.ingredientId)
+
     const recipeIngredients = await RecipeIngredients.findAll({
         where: {
             ingredientId: {
@@ -138,9 +139,7 @@ const getMyRecipes = async(userId) => {
     return data
 }
 
-getMyRecipes('e25cbce2-daef-4b83-b9b2-ecd71e065191')
-    .then(data => console.log(data))
-    .catch(data => console.log(data))
+
 
 
 module.exports = {
@@ -148,6 +147,7 @@ module.exports = {
     getRecipeById,
     createRecipe,
     updateRecipe,
-    deleteRecipe
+    deleteRecipe,
+    getMyRecipes
 }
 
